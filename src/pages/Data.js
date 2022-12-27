@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ReactPaginate from 'react-paginate';
 import "../styles/data.css"
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import WholeData from "./WholeData"
 
 
@@ -101,14 +101,15 @@ const Data = () => {
             </thead>
 
             {searchInput.length > 1
-              ? filteredResults.map((item, index) => {
+              ? filteredResults.map((i) => {
 
                 return (
                   <tbody>
                     <tr className="winner__table">
-                      <td>{index + 1}</td>
-                      <Link className="link-color" to="/card" ><td>{item.address}</td></Link>
-                      <td>{item.balance / 1000000000000000000}</td>
+                      <td>{ }</td>
+                      {/* <Link className="link-color" to="/card"><text onClick={(e)=>handleClick(e,i.address)}><td>{i.address}</td></text></Link> */}
+                      <td style={{ "cursor": "pointer" }} onClick={(e) => handleClick(e, i.address)} className="link-color">{i.address}</td>
+                      <td>{i.balance / 1000000000000000000}</td>
                       <td>{"FUFI"}</td>
                     </tr>
                   </tbody>

@@ -133,8 +133,8 @@ const WholeData = () => {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td data-title="Total Offchain Reward">{myDataZero}</td>
-                                        <td data-title="Total Offchain Widthdraw">{myDataOne}</td>
+                                        <td data-title="Total Reward">{myDataZero}</td>
+                                        <td data-title="Total Widthdraw">{myDataOne}</td>
                                         <td data-title="Total Supply Offchain">{myDataTwo}</td>
                                         <td data-title="Total Supply Onchain">{myDataOnChain}</td>
                                         <td data-title="Total Supply">{myDataOnChain + myDataTwo}</td>
