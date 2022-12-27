@@ -1,0 +1,92 @@
+
+
+
+.main {
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.table__head {
+    color: #6d6f72;
+    font-weight: 700;
+    background-color: #fbfafc;
+    white-space: nowrap;
+}
+
+.custom-page {
+    background-image: url();
+    background-position: center center;
+    background-size: cover;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 0px solid #FFF;
+}
+
+.style-design {
+    margin-top: 5% ! important;
+}
+
+.winner__table {
+    white-space: nowrap;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid #9c031f;
+    color: #9c031f;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: #9c031f;
+    color: #FFF;
+    transition: 0.7s;
+}
+
+
+.link-color {
+    color: #9c031f !important;
+    text-decoration: dotted !important;
+}
+
+#table-borderless thead th {
+    border: 1px solid #9c031f !important;
+}
+
+#table-borderless tbody td {
+    border: 1px solid #9c031f !important;
+}
+
+@media screen and (max-width: 567px) {
+
+    .winner__table {
+        font-size: 12px;
+    }
+}
