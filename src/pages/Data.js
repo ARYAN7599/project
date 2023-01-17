@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ReactPaginate from 'react-paginate';
 import "../styles/data.css"
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import WholeData from "./WholeData"
 
 
@@ -20,11 +20,11 @@ const Data = () => {
 
   const getData = async (offset) => {
     setLoading(true);
-    const res = await axios.get(`https://fufiscan.com/api?module=account&action=listaccounts&page=${offset}&offset=100`)
+    const res = await axios.get(`https://fufiscan.com/api?module=account&action=listaccounts&page=${offset}&offset=10000`)
     const APIData = res.data.result;
     setLoading(false);
     //console.log("offset", offset);
-    //console.log("APIData", APIData);
+    //console.log("APIData", APIData);  
 
     const postData = APIData.map(item => {
       return {
@@ -44,13 +44,13 @@ const Data = () => {
 
   useEffect(() => {
     getData(offset)
-    //console.log(offset)
+    
   }, [offset])
+  
 
   const handlePageClick = () => {
     setOffset(offset + 1)
     getData(pageCount)
-    //console.log(offset + 1)
   };
 
   const handleClick = (e, item) => {
@@ -101,15 +101,14 @@ const Data = () => {
             </thead>
 
             {searchInput.length > 1
-              ? filteredResults.map((i) => {
+              ? filteredResults.map((item) => {
 
                 return (
                   <tbody>
                     <tr className="winner__table">
                       <td>{ }</td>
-                      {/* <Link className="link-color" to="/card"><text onClick={(e)=>handleClick(e,i.address)}><td>{i.address}</td></text></Link> */}
-                      <td style={{ "cursor": "pointer" }} onClick={(e) => handleClick(e, i.address)} className="link-color">{i.address}</td>
-                      <td>{i.balance / 1000000000000000000}</td>
+                      <Link className="link-color" to="/card" ><td>{item.address}</td></Link>
+                      <td>{item.balance / 1000000000000000000}</td>
                       <td>{"FUFI"}</td>
                     </tr>
                   </tbody>

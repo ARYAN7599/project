@@ -30,12 +30,6 @@
     white-space: nowrap;
 }
 
-.custom-page {
-    background-image: url();
-    background-position: center center;
-    background-size: cover;
-}
-
 .table-bordered td,
 .table-bordered th {
     border: 0px solid #FFF;

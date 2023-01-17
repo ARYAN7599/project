@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import errorPage from "../image/errorPage.svg"
 import Footer from "./Footer"
 import axios from "axios";
 import "../styles/data.css"
@@ -11,13 +12,13 @@ const Card = () => {
   const handleClick = () => navigate('/');
 
   const location = useLocation();
-  const { address } = location.state;
+  const { address } = location;
   const [myDataZero, setMyDataZero] = useState([]);
   const [myDataOne, setMyDataOne] = useState([]);
   const [myDataTwo, setMyDataTwo] = useState([]);
   const [isError, setIsError] = useState("");
 
-  
+
   const baseURLZero = "https://api.fufi.info/getRewards";
   const baseURLOne = "https://api.fufi.info/getdirectreward";
   const baseURLTwo = "http://64.227.177.190:3033/api/getRefralInformation";
@@ -161,22 +162,27 @@ const Card = () => {
   else {
     return (
 
-      <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+      <div className="container">
 
-        <div className="custom-page ">
+        <div className="row">
 
-          <h1 className="text-center mt-5">Hey...</h1>
+          <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 
-          <h2 className="text-center mt-3">This is not a Sid Member !</h2>
+            <img src={errorPage} alt="logo" className="img-fluid mt-5" />
 
-          <div className="text-center mt-3">
+            <h1 className="text-center mt-5">Hey...</h1>
 
-            <button type="button" onClick={handleClick}>Go Back</button>
+            <h2 className="text-center mt-3">This is not a Sid Member !</h2>
+
+            <div className="text-center mt-3">
+
+              <button type="button" onClick={handleClick}>Go Back</button>
+
+            </div>
+
 
           </div>
-
         </div>
-
       </div>
 
     )
@@ -185,6 +191,5 @@ const Card = () => {
 };
 
 export default Card;
-
 
 
